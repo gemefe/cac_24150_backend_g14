@@ -1,10 +1,10 @@
-from django.contrib.auth.models import Producto
+from .models import Producto
 from rest_framework import serializers
 
 class ProductoSerializer(serializers.ModelSerializer):
     class Meta:
         model=Producto
-        fields='id', 'name', 'image', 'price', 'descripcion'
+        fields='id', 'name', 'image', 'price', 'description'
 
 
 """

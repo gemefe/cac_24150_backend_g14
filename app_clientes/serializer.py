@@ -1,4 +1,4 @@
-from django.contrib.auth.models import Cliente, Consulta
+from .models import Cliente, Consulta
 from rest_framework import serializers
 
 class ClienteSerializer(serializers.ModelSerializer):
