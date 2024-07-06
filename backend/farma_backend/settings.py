@@ -39,20 +39,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-INSTALLED_APPS += [
+CUSTOM_APPS = [
     'app_clientes',
     'app_productos',
     'rest_framework', 
+    "corsheaders",
 ]
 
+INSTALLED_APPS += CUSTOM_APPS
+
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
 ROOT_URLCONF = 'farma_backend.urls'
@@ -79,10 +83,21 @@ WSGI_APPLICATION = 'farma_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default" :{
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "cac_20150_g14_farma_db",
+        "USER": "root",
+        "PASSWORD": "g14_farma",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
     }
 }
 
@@ -146,6 +161,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 CSRF_TRUSTED_ORIGINS = [
     'https://localhost:8000',
     'http://localhost:8000',  # if also using http
+    'http://localhost:8080'
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
