@@ -1,4 +1,5 @@
-# cac_24150_backend_g14
+cac_24150_backend_g14
+=====================
 
 
 Preparación del ambiente de trabajo
@@ -54,9 +55,18 @@ docker-compose up -d
 
 
 
-Instalar mysql en la pc
-Establecer nueva conexión luego de iniciar el contenedor en Docker
+### Instalar mysql en la PC
+## Establecer nueva conexión luego de iniciar el contenedor en Docker
+'''
 hostname = 127.0.0.1
 port = 3306
 username = root
 password = g14_farma
+'''
+
+
+
+### Instalar data de ejemplo a la base de datos
+'''
+python manage.py loaddata productos.json
+'''
