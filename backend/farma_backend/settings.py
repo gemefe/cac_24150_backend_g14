@@ -161,7 +161,10 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 CSRF_TRUSTED_ORIGINS = [
     'https://localhost:8000',
     'http://localhost:8000',  # if also using http
+    'http://127.0.0.1:8000',  # if also using http
     'http://localhost:8080'
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+APPEND_SLASH=False
