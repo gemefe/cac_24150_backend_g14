@@ -48,6 +48,12 @@ Docker
 ### Iniciar contenedor en al consola
     docker-compose up -d
 
+### Una vez instalado Docker e iniciado el contenedor van a estar habilitados:
+## El frontend con el formulario: [http://localhost:8081/]
+## La base de datos desde el Adminer: [http://localhost:8080/]
+## El backend se inicia desde la terminal de VSCode. Una vez iniciado el link será: [http://127.0.0.1:8000/]
+## El Admin de Django será, se podrá acceder una vez creado el superuser: [http://127.0.0.1:8000/admin/]
+
 Instalar MySQL en la PC
 -----------------------
 
