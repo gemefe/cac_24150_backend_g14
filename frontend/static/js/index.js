@@ -1,17 +1,4 @@
-const form = document.getElementById("crear-producto-form") 
-const btn = document.getElementById("btn-post")
-
 const URL_API_BASE = "http://127.0.0.1:8000/producto/"
-
-btn.addEventListener("click", (e)=> {
-    e.preventDefault()
-    fetch(URL_API_BASE,{
-        method: 'POST',
-        body: new FormData(form)
-    })
-    .catch(error => console.log({error}))
-    })
-
 
 class Producto{
     constructor({name, price, description, image}){
@@ -27,6 +14,7 @@ class Producto{
                 <h4>${this.name}</h4>
                 <hr />
                 <ul>
+                    <img src="/static/img/${this.image}" style="width: 50px; height: 50px;" />
                     <li>Price : ${this.price}</li>
                     <li>Description : ${this.description}</li>
                 </ul>
