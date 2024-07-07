@@ -11,7 +11,7 @@ Preparación del ambiente de trabajo
 ### Crear ambiente virtual
     virtualenv venv_farma
 
-### Activar ambiente virtual
+### Activar el ambiente virtual desde la carpeta donde quedó guardado el ambiente virtual
     .\venv_farma\Scripts\activate
 
 ### Instalar dependencias del proyecto
@@ -28,7 +28,7 @@ Preparación del ambiente de trabajo
     python manage.py startapp app_productos
     python manage.py startapp app_clientes
 
-### Ejecución de las migraciones de los cambios realizados del proyecto
+### Ejecución de las migraciones de los cambios realizados del proyecto cada vez que se modifica la base de datos.
     python manage.py makemigrations
     python manage.py migrate
 
@@ -40,20 +40,18 @@ Preparación del ambiente de trabajo
 
 ### Para cerrar la ejecución CTRL + C
 
-
-
-
-
 Docker
 ------
 
-# Instalar Docker [https://www.docker.com/]
+### Instalar Docker [https://www.docker.com/]
 
-# Iniciar contenedor en al consola
+### Iniciar contenedor en al consola
     docker-compose up -d
 
-### Instalar MySQL en la PC
-## Establecer nueva conexión luego de iniciar el contenedor en Docker
+Instalar MySQL en la PC
+-----------------------
+
+### Establecer nueva conexión luego de iniciar el contenedor en Docker
     hostname = 127.0.0.1
     port = 3306
     username = root
