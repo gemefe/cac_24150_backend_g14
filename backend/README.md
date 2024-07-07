@@ -3,70 +3,66 @@ cac_24150_backend_g14
 
 
 Preparación del ambiente de trabajo
+-----------------------------------
 
-Instalar dependencia
-pip install virtualenv
+# Instalar dependencia
+    pip install virtualenv
 
-Crear ambiente virtual
-virtualenv venv_farma
+# Crear ambiente virtual
+    virtualenv venv_farma
 
-Activar ambiente virtual
-.\venv_farma\Scripts\activate
+# Activar ambiente virtual
+    .\venv_farma\Scripts\activate
 
-Instalar dependencias del proyecto
-pip install django djangorestframework djangorestframework-simplejwt django-cors-headers
+# Instalar dependencias del proyecto
+    pip install django djangorestframework djangorestframework-simplejwt django-cors-headers
 
-O instalar dependencias desde el requirements.txt
-pip install -r requirements.txt
+# O instalar dependencias desde el requirements.txt
+    pip install -r requirements.txt
 
-Una vez instaladas las dependencias, generar el requirements.txt de PIP
-pip freeze > requirements.txt
+# Una vez instaladas las dependencias, generar el requirements.txt de PIP
+    pip freeze > requirements.txt
 
-Creación del proyecto Django
-django-admin startproject farma_backend .
-python manage.py startapp app_productos
-python manage.py startapp app_clientes
-
-
-
-Ejecución de las migraciones de los cambios realizados del proyecto
-python manage.py makemigrations
-python manage.py migrate
+# Creación del proyecto Django
+    django-admin startproject farma_backend .
+    python manage.py startapp app_productos
+    python manage.py startapp app_clientes
 
 
-Creación del superusuario
-python manage.py createsuperuser
+
+# Ejecución de las migraciones de los cambios realizados del proyecto
+    python manage.py makemigrations
+    python manage.py migrate
 
 
-Ejecución del servidor
-python manage.py runserver
+# Creación del superusuario
+    python manage.py createsuperuser
 
-Para cerrar la ejecución CTRL+C
+
+# Ejecución del servidor
+    python manage.py runserver
+
+# Para cerrar la ejecución CTRL+C
 
 
 
 
 
 Docker
-Instalar Docker
+------
 
-Iniciar contenedor en al consola
-docker-compose up -d
+# Instalar Docker [https://www.docker.com/]
 
+# Iniciar contenedor en al consola
+    docker-compose up -d
 
-
-### Instalar mysql en la PC
+### Instalar MySQL en la PC
 ## Establecer nueva conexión luego de iniciar el contenedor en Docker
-'''
-hostname = 127.0.0.1
-port = 3306
-username = root
-password = g14_farma
-'''
-
-
+    hostname = 127.0.0.1
+    port = 3306
+    username = root
+    password = g14_farma
 
 ### Instalar data de ejemplo a la base de datos
-'''
-python manage.py loaddata productos.json
-'''
+    python manage.py loaddata productos.json
+
