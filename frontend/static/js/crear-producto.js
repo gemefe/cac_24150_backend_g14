@@ -9,5 +9,6 @@ btn.addEventListener("click", (e)=> {
         method: 'POST',
         body: new FormData(form)
     })
+    .then(e => window.location.href = '/')
     .catch(error => console.log({error}))
     })
