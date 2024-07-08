@@ -1,7 +1,8 @@
 const URL_API_BASE = "http://127.0.0.1:8000/producto/"
 
 class Producto{
-    constructor({name, price, description, image}){
+    constructor({id, name, price, description, image}){
+        this.id = id
         this.name = name
         this.price = price
         this.description = description
@@ -18,11 +19,21 @@ class Producto{
                     <li>Price : ${this.price}</li>
                     <li>Description : ${this.description}</li>
                 </ul>
-            </div>   
+            </div> 
+            <button onclick=deleteData(${this.id})>Eliminar Producto</button>  
         `
     }        
-    }
+}
 
+
+function deleteData(id) {
+  return fetch(URL_API_BASE + id + '/', {
+    method: 'DELETE'
+  })
+  .then(response => response.text())
+  .then(e => window.location = '/')
+  .catch(error => console.log(error));
+}
 
 const btnGet = document.getElementById("btn-get")
 btnGet.addEventListener(
