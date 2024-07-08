@@ -1,7 +1,10 @@
+const HOST = "127.0.0.1"
+const PORT = 8000
+
 const form = document.getElementById("crear-producto-form") 
 const btn = document.getElementById("btn-post")
 
-const URL_API_BASE = "http://127.0.0.1:8000/producto/"
+const URL_API_BASE = `http://${HOST}:${PORT}/producto/`
 
 btn.addEventListener("click", (e)=> {
     e.preventDefault()
