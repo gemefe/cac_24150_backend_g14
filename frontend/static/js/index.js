@@ -7,27 +7,34 @@ class Producto{
         this.price = price;
         this.description = description;
         this.image = image;
-        this.image_url = `/static/img/${image}`
+        if (image.match(/^\w+\.\w+$/)) {  // Verifica si image tiene el formato "abc.extension"
+            this.image_url = `/static/img/${image}`;
+        } else {
+            this.image_url = `${image}`;
+        }
     }
 
     createDiv(){
         return `
-            <div id="${this.id}">
+            <div id="${this.id}" class="section m-3 p-5 pt-3 border border-secondary border-1 border-gray rounded-3">
                 <div class="row">
-                    <h4 class="col" >${this.name}</h4>
-                    <button class="col btn btn-outline-danger" onclick=deleteData(${this.id})>Eliminar Producto</button>
+                    <h4 class="col-6" >${this.name}</h4>
+                    <button class="col btn btn-outline-danger m-1" onclick=deleteData(${this.id})>
+                        Eliminar
+                    </button>
+                    <button class="col btn btn-outline-secondary m-1" onclick=updateData(${this.id})>
+                        Editar
+                    </button>
                 </div>
                 <hr />
-                <ul>
-                    <img class="img-thumbnail" src="${this.image_url}" style="max-height: 200px;" />
-                    <li>Price : ${this.price}</li>
-                    <li>Description : ${this.description}</li>
-                </ul>
+                <div class="row">
+                    <img class="col-auto img-thumbnail" src="${this.image_url}" style="max-height: 200px;" />
+                    <ul class="col">
+                        <li><strong>Precio: </strong>$${this.price}</li>
+                        <li><strong>Descripción: </strong>${this.description}</li>
+                    </ul>
+                </div>
             </div> 
-            <button class="col btn btn-outline-danger" onclick=deleteData(${this.id})>Eliminar Producto</button>  
-            <button>
-            <a href="/editar-producto.html?id=${this.id}" style="text-decoration: none;">Editar Producto</a>
-            </button>  
         `
     }        
 }
@@ -56,5 +63,18 @@ btnGet.addEventListener(
     document.getElementById("productos").innerHTML = ing_data
 })
     .catch(error => console.log(error))
-}    
+}
+)
+
+function updateData(id) {
+    const url = `/editar-producto.html?id=${id}`;
+    window.location.href = url;
+}
+
+const btnCreate = document.getElementById("btn-create")
+btnCreate.addEventListener("click", 
+    ()=> {
+    const url = `/crear-producto.html`;
+    window.location.href = url;
+    }
 )

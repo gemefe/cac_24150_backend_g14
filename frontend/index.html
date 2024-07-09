@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,20 +12,18 @@
 
     <!-- FontAwesome Free 5.15.4-->
     <link href="./static/vendor/fontawesome-free-5.15.4/css/all.min.css" rel="stylesheet" type="text/css">
-
 </head>
 
-<body class = "m-5">
+<body class = "container mt-4 bg-dark text-light">
     <h1>Productos</h1>
     <hr>
-    <button id="btn-get" type="button" class="btn btn-primary">Ver productos</button>
+        <button id="btn-get" type="button" class="btn btn-primary m-1">Ver todos los productos</button>
+        <button id="btn-create" type="button" class="btn btn-success m-1">Crear producto</button>
     <hr>
         <section id="mostrar-productos">
-            <div id="productos">
+            <div id="productos" class="container">
             </div>
         </section>
-    <hr>
-    <a href="./crear-producto.html">Crear Productos</a>
 </body>
 
 <script src="./static/js/index.js"></script>

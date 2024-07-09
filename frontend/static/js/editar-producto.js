@@ -24,19 +24,27 @@ class Producto {
     return `
          <h2>Editar Producto</h2>
         <form id="editar-producto-form">
-            <label for="nombre">Name</label>
-            <input type="text" name="name" id="name" value="${this.name}">
-            <br>
-            <label for="nombre">Image</label>
-            <input type="text" name="image" id="image" value="${this.image}" >
-            <br>
-            <label for="precio">Price</label>
-            <input type="number" name="price" id="price" value="${this.price}">
-            <br>
-            <label for="descripcion">Description</label>
-            <input type="text" name="description" id="description" value="${this.description}">
-            <br>
-            <button id="btn-put" type="button" onclick="update()">Actualizar producto</button>
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre del producto</label>
+              <input type="text" class="form-control" id="name" aria-describedby="nombre" value="${this.name}">
+              <div id="name_help" class="form-text text-light">Ingrese el nombre completo del producto.</div>
+            </div>      
+            <div class="mb-3">  
+              <label for="image" class="form-label">URL de la imagen</label>
+              <input type="text" class="form-control" name="image" id="image" value="${this.image}" >
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Precio</label>
+              <input type="number" class="form-control" name="price" id="price" value="${this.price}">
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Descripción</label>
+              <textarea type="text" class="form-control" name="description" id="description" cols="30" rows="4">${this.description}</textarea>
+            </div>
+            <div class="mb-3">
+              <button id="btn-put" type="button" class="btn btn-success m-1" onclick="update()">Actualizar producto</button>
+              <button id="btn-back" type="button" class="btn btn-outline-primary m-1" onclick="index()"><i class="fa fa-arrow-left me-2" aria-hidden="true"></i>Volver</button>
+            </div>
         </form>
         `
   }
@@ -73,3 +81,8 @@ function update(){
 //btn.addEventListener('click', (e) => {
  // e.preventDefault()
 //})
+
+function index() {
+  const url = `/`;
+  window.location.href = url;
+}

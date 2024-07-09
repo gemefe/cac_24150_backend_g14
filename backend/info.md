@@ -1,6 +1,10 @@
 cac_24150_backend_g14
 =====================
 
+### Arrancar directamente escribiendo en la consola lo siguiente:
+    make
+
+### En su defecto considerar lo siguiente y posteriormente probar el make.
 
 Preparación del ambiente de trabajo
 -----------------------------------

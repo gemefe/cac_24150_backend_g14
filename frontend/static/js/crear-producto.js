@@ -15,3 +15,9 @@ btn.addEventListener("click", (e)=> {
     .then(e => window.location.href = '/')
     .catch(error => console.log({error}))
     })
+
+    
+function index() {
+    const url = `/`;
+    window.location.href = url;
+    }

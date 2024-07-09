@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,28 +14,35 @@
     <link href="./static/vendor/fontawesome-free-5.15.4/css/all.min.css" rel="stylesheet" type="text/css">
 
 </head>
-<body>
+
+<body class = "container mt-4 bg-dark text-light">
     <section id="crear-producto">
         <h2>Crear Producto</h2>
         <form id="crear-producto-form">
-            <label for="nombre">Name</label>
-            <input type="text" name="name" id="name" >
-            <br>
-            <label for="nombre">Image</label>
-            <input type="text" name="image" id="image" >
-            <br>
-            <label for="precio">Price</label>
-            <input type="number" name="price" id="price" >
-            <br>
-            <label for="descripcion">Description</label>
-            <textarea name="description" id="description" cols="30" rows="10" ></textarea>
-            <br>
-            <button id="btn-post" type="submit">Crear producto</button>
+            <div class="mb-3"></div>
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="name" id="name>
+                <div id="name_help" class="form-text text-light">Ingrese el nombre completo del producto.</div>
+            </div>
+            <div class="mb-3"></div>
+                <label for="image" class="form-label">URL de la imagen</label>
+                <input type="text" class="form-control" name="image" id="image">
+            </div>
+            <div class="mb-3"></div>
+                <label for="price" class="form-label">Precio</label>
+                <input type="number" class="form-control" name="price" id="price">
+            </div>
+            <div class="mb-3"></div>
+                <label for="description" class="form-label">Descripción</label>
+                <textarea name="description" class="form-control" id="description" cols="30" rows="4"></textarea>
+            </div>
+            <div class="mb-3"></div>
+                <button id="btn-post" class="btn btn-success m-1" type="submit">Crear producto</button>
+                <button type="button" class="btn btn-outline-primary m-1" onclick="index()"><i class="fa fa-arrow-left me-2" aria-hidden="true"></i>Volver</button>
+            </div>
         </form>
     </section>
-    <hr />
-    <a href="/">Volver</a>
 </body>
-    <script src="./static/js/crear-producto.js"></script>
 
+<script src="./static/js/crear-producto.js"></script>
 </html>
