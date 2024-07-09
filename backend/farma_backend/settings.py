@@ -96,7 +96,7 @@ DATABASES = {
         "NAME": "cac_20150_g14_farma_db",
         "USER": "root",
         "PASSWORD": "g14_farma",
-        "HOST": "127.0.0.1",
+        "HOST": "mysql_host",
         "PORT": "3306",
     }
 }
@@ -161,12 +161,8 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 CSRF_TRUSTED_ORIGINS = [
     'https://localhost:8000',
     'http://localhost:8000',  # if also using http
-    'http://127.0.0.1:8000',  # if also using http
     'http://localhost:8080'
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
-
-# CORS_ORIGIN_WHITELIST
-
-APPEND_SLASH=False
+CORS_ORIGIN_WHITELIST = ('http://0.0.0.0:8000',)

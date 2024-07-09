@@ -4,15 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
+
+    <!-- Bootstrap 5.3.3 -->
+    <link href="./static/vendor/bootstrap-5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./static/vendor/bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- FontAwesome Free 5.15.4-->
+    <link href="./static/vendor/fontawesome-free-5.15.4/css/all.min.css" rel="stylesheet" type="text/css">
+
 </head>
-<body>
-    <section id="mostrar-productos">
-        <button id="btn-get">Ver Productos</button>
-        <div id="productos">
-        </div>
-    </section>
-    <hr />
+
+<body class = "m-5">
+    <h1>Productos</h1>
+    <hr>
+    <button id="btn-get" type="button" class="btn btn-primary">Ver productos</button>
+    <hr>
+        <section id="mostrar-productos">
+            <div id="productos">
+            </div>
+        </section>
+    <hr>
     <a href="./crear-producto.html">Crear Productos</a>
 </body>
-    <script src="./static/js/index.js"></script>
+
+<script src="./static/js/index.js"></script>
 </html>

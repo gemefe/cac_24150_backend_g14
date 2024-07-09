@@ -1,26 +1,30 @@
 const URL_API_BASE = "http://127.0.0.1:8000/producto/"
 
 class Producto{
-    constructor({id, name, price, description, image}){
-        this.id = id
-        this.name = name
-        this.price = price
-        this.description = description
-        this.image = image
+    constructor({id, name, price, description, image}) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.image = image;
+        this.image_url = `/static/img/${image}`
     }
 
     createDiv(){
         return `
             <div id="${this.id}">
-                <h4>${this.name}</h4>
+                <div class="row">
+                    <h4 class="col" >${this.name}</h4>
+                    <button class="col btn btn-outline-danger" onclick=deleteData(${this.id})>Eliminar Producto</button>
+                </div>
                 <hr />
                 <ul>
-                    <img src="/static/img/${this.image}" style="width: 50px; height: 50px;" />
+                    <img class="img-thumbnail" src="${this.image_url}" style="max-height: 200px;" />
                     <li>Price : ${this.price}</li>
                     <li>Description : ${this.description}</li>
                 </ul>
             </div> 
-            <button onclick=deleteData(${this.id})>Eliminar Producto</button>  
+            
         `
     }        
 }
