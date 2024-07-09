@@ -24,7 +24,10 @@ class Producto{
                     <li>Description : ${this.description}</li>
                 </ul>
             </div> 
-            
+            <button class="col btn btn-outline-danger" onclick=deleteData(${this.id})>Eliminar Producto</button>  
+            <button>
+            <a href="/editar-producto.html?id=${this.id}" style="text-decoration: none;">Editar Producto</a>
+            </button>  
         `
     }        
 }
