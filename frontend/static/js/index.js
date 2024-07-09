@@ -21,6 +21,9 @@ class Producto{
                 </ul>
             </div> 
             <button onclick=deleteData(${this.id})>Eliminar Producto</button>  
+            <button>
+            <a href="/editar-producto.html?id=${this.id}" style="text-decoration: none;">Editar Producto</a>
+            </button>  
         `
     }        
 }
